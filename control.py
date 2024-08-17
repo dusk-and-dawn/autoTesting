@@ -24,8 +24,15 @@ def openApp(link):
     print('app reached')
     time.sleep(3)
 
-    text_box = driver.find_element(by=By.CLASS_NAME, value='fn-input__text-field.ids-input.ids-input--text.ids-input--clear.js-has-input-clear.js-login-toggle-active-input-user')
-    text_box.send_keys('test')
+    u_id = driver.find_element(by=By.CLASS_NAME, value='fn-input__text-field.ids-input.ids-input--text.ids-input--clear.js-has-input-clear.js-login-toggle-active-input-user')
+    u_id.send_keys('test')
     print('sent test id')
-    time.sleep(20)
+    time.sleep(5)
+
+    pw = driver.find_element(by=By.CLASS_NAME, value='fn-input__text-field.ids-input.ids-input--text.ids-input--reveal.js-login-toggle-active-input-password')
+    pw.send_keys('test')
+    print('sent pw')
+    time.sleep(5)
+    pw.submit()
+    time.sleep(15)
 openApp('https://basic-trial-sac-eu10.cfapps.eu10.hana.ondemand.com/sap/fpa/ui/app.html#/')
