@@ -88,9 +88,9 @@ def upload_new_data():
         .perform()
     print('selecting source for upload...')
     time.sleep(5)
-    still_selecting = driver.find_element(by=By.ID, value='__section38-dm-file-uploader-fu_button')
+    still_selecting = driver.find_element(by=By.XPATH, value='//button[.//bdi[text()="Select Source File"]]')
     ActionChains(driver)\
-        .click(select_source)\
+        .click(still_selecting)\
         .perform()
     print('...continuing to select source for upload...')
     time.sleep(5)
